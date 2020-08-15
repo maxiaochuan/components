@@ -1,6 +1,17 @@
 {
-  "packages": [
-    "packages/*"
-  ],
+  "npmClient": "yarn",
+  "packages": ["packages/*"],
+  "command": {
+    "bootstrap": {
+      "hoist": true
+    },
+    "version": {
+      "conventionalCommits": true
+    },
+    "publish": {
+      "registry": "https://registry.npmjs.org"
+    }
+  },
+  "ignoreChanges": ["**/*.md"],
   "version": "independent"
 }

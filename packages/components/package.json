@@ -1,0 +1,28 @@
+{
+  "name": "@mxcins/components",
+  "version": "0.0.0",
+  "description": "toy",
+  "keywords": [
+    "react",
+    "components"
+  ],
+  "author": "Xiaochuan Ma <mxcins@gmail.com>",
+  "homepage": "https://github.com/maxiaochuan/components",
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxiaochuan/components.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/maxiaochuan/components/issues"
+  }
+}
