@@ -1,7 +1,33 @@
 {
-  "name": "root",
+  "name": "@mxcins/components",
   "private": true,
-  "devDependencies": {
-    "lerna": "^3.22.1"
+  "scripts": {
+    "lint": "yarn lint:script && yarn lint:style",
+    "lint:script": "eslint '**/*.{js,jsx,ts,tsx}' --fix",
+    "lint:style": "yarn lint:less && yarn lint:css-in-js",
+    "lint:less": "stylelint '**/*.less' --syntax less --fix --allow-empty-input",
+    "lint:css-in-js": "stylelint '**/*.{js,jsx,ts,tsx}' --fix --allow-empty-input",
+    "prettier": "prettier --write '**/*.{js,ts,jsx,tsx,less,md,json}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged --allow-empty && yarn tsc --noEmit"
+    }
+  },
+  "lint-staged": {
+    "**/*.less": [
+      "stylelint --fix --syntax less"
+    ],
+    "**/*.{ts,tsx,js,jsx}": [
+      "stylelint --fix --allow-empty-input",
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "@mxcins/bedrock": "1.4.2",
+    "husky": "4.2.5",
+    "lint-staged": "10.2.11",
+    "lerna": "3.22.1",
+    "typescript": "3.9.7"
   }
 }
