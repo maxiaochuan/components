@@ -8,7 +8,8 @@
       "conventionalCommits": true
     },
     "publish": {
-      "registry": "https://registry.npmjs.org"
+      "registry": "https://registry.npmjs.org",
+      "message": "chore: publish"
     }
   },
   "ignoreChanges": ["**/*.md"],

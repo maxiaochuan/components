@@ -6,16 +6,20 @@
   ],
   "scripts": {
     "boot": "lerna bootstrap",
-    "c": "git-cz",
+    "clean": "lerna clean -y",
+    "commit": "git-cz",
     "lint": "yarn lint:script && yarn lint:style",
     "lint:css-in-js": "stylelint '**/*.{js,jsx,ts,tsx}' --fix --allow-empty-input",
     "lint:less": "stylelint '**/*.less' --syntax less --fix --allow-empty-input",
     "lint:script": "eslint '**/*.{js,jsx,ts,tsx}' --fix",
     "lint:style": "yarn lint:less && yarn lint:css-in-js",
-    "prettier": "prettier --write '**/*.{js,ts,jsx,tsx,less,md,json}'"
+    "version": "lerna version --conventional-commits --yes",
+    "prettier": "prettier --write '**/*.{js,ts,jsx,tsx,less,md,json}'",
+    "publish": "lerna publish from-git"
   },
   "husky": {
     "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged --allow-empty && yarn tsc --noEmit"
     }
   },
@@ -33,16 +37,16 @@
       "path": "./node_modules/cz-lerna-changelog"
     }
   },
-  "dependencies": {
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.2",
     "@mxcins/bedrock": "1.4.2",
-    "commitizen": "^4.1.2",
-    "cz-lerna-changelog": "^2.0.3",
+    "@types/jest": "26.0.10",
+    "commitizen": "4.1.2",
+    "cz-lerna-changelog": "2.0.3",
     "husky": "4.2.5",
     "lerna": "3.22.1",
     "lint-staged": "10.2.11",
     "typescript": "3.9.7"
-  },
-  "devDependencies": {
-    "@types/jest": "^26.0.10"
   }
 }
