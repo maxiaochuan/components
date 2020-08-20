@@ -1,19 +1,18 @@
 {
   "name": "@mxcins/components",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
+    "boot": "lerna bootstrap",
+    "c": "git-cz",
     "lint": "yarn lint:script && yarn lint:style",
+    "lint:css-in-js": "stylelint '**/*.{js,jsx,ts,tsx}' --fix --allow-empty-input",
+    "lint:less": "stylelint '**/*.less' --syntax less --fix --allow-empty-input",
     "lint:script": "eslint '**/*.{js,jsx,ts,tsx}' --fix",
     "lint:style": "yarn lint:less && yarn lint:css-in-js",
-    "lint:less": "stylelint '**/*.less' --syntax less --fix --allow-empty-input",
-    "lint:css-in-js": "stylelint '**/*.{js,jsx,ts,tsx}' --fix --allow-empty-input",
-    "prettier": "prettier --write '**/*.{js,ts,jsx,tsx,less,md,json}'",
-    "c": "git-cz"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-lerna-changelog"
-    }
+    "prettier": "prettier --write '**/*.{js,ts,jsx,tsx,less,md,json}'"
   },
   "husky": {
     "hooks": {
@@ -28,6 +27,11 @@
       "stylelint --fix --allow-empty-input",
       "eslint --fix"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    }
   },
   "dependencies": {
     "@mxcins/bedrock": "1.4.2",
