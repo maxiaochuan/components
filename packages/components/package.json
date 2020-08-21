@@ -27,5 +27,21 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "peerDependencies": {
+    "@types/react": "*",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "devDependencies": {
+    "@types/react": "16.9.46",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "dependencies": {
+    "@types/react-custom-scrollbars": "^4.0.7",
+    "@types/react-lazyload": "^2.6.0",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-lazyload": "^3.0.0"
   }
 }
