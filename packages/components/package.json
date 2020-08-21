@@ -6,23 +6,26 @@
     "react",
     "components"
   ],
-  "author": "Xiaochuan Ma <mxcins@gmail.com>",
   "homepage": "https://github.com/maxiaochuan/components",
-  "license": "MIT",
-  "files": [
-    "lib"
-  ],
-  "publishConfig": {
-    "access": "public"
+  "bugs": {
+    "url": "https://github.com/maxiaochuan/components/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/maxiaochuan/components.git"
   },
+  "license": "MIT",
+  "author": "Xiaochuan Ma <mxcins@gmail.com>",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
+    "build": "mlib build",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
-  "bugs": {
-    "url": "https://github.com/maxiaochuan/components/issues"
+  "publishConfig": {
+    "access": "public"
   }
 }

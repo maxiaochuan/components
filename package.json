@@ -6,6 +6,7 @@
   ],
   "scripts": {
     "boot": "lerna bootstrap",
+    "build": "yarn workspaces run build",
     "clean": "lerna clean -y",
     "commit": "git-cz",
     "lint": "yarn lint:script && yarn lint:style",
@@ -13,14 +14,14 @@
     "lint:less": "stylelint '**/*.less' --syntax less --fix --allow-empty-input",
     "lint:script": "eslint '**/*.{js,jsx,ts,tsx}' --fix",
     "lint:style": "yarn lint:less && yarn lint:css-in-js",
-    "version": "lerna version --conventional-commits --yes",
     "prettier": "prettier --write '**/*.{js,ts,jsx,tsx,less,md,json}'",
-    "publish": "lerna publish from-git"
+    "publish": "lerna publish from-git",
+    "version": "lerna version --conventional-commits --yes"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged --allow-empty && yarn tsc --noEmit"
+      "pre-commit": "lint-staged --allow-empty && yarn tsc --noEmit",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
@@ -41,6 +42,7 @@
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^9.1.2",
     "@mxcins/bedrock": "1.4.2",
+    "@mxcins/library": "^0.4.5",
     "@types/jest": "26.0.10",
     "commitizen": "4.1.2",
     "cz-lerna-changelog": "2.0.3",
