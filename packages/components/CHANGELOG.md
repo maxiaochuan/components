@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.0](https://github.com/maxiaochuan/components/compare/@mxcins/components@0.0.1-alpha.1...@mxcins/components@0.1.0-alpha.0) (2020-10-20)
+
+
+### Features
+
+* **@mxcins/components:** add scrollbars & update conre provider ([fc697f6](https://github.com/maxiaochuan/components/commit/fc697f63bb57a6f9878e15a98f7b69d2f20cb939))
+
+
+
+
+
 ## [0.0.1-alpha.1](https://github.com/maxiaochuan/components/compare/@mxcins/components@0.0.1-alpha.0...@mxcins/components@0.0.1-alpha.1) (2020-08-21)
 
 
