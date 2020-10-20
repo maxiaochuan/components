@@ -1,8 +1,11 @@
-/* eslint-disable @typescript-eslint/no-empty-interface */
 import React, { SFC, useMemo } from 'react';
+import { merge } from 'lodash-es';
 import { Provider } from './context';
+import { DEFAULT_CORE_CONTEXT_CONFIG, CoreContextConfig } from './const';
 
-export interface CoreProviderProps {}
+export interface CoreProviderProps {
+  defaultConfig?: Partial<CoreContextConfig>;
+}
 
 /**
  * @description
@@ -12,9 +15,16 @@ export interface CoreProviderProps {}
  * @returns {*}
  */
 const CoreProvider: SFC<CoreProviderProps> = props => {
-  const { children } = props;
-  const provided = useMemo(() => ({}), []);
+  const { defaultConfig = {}, children } = props;
+  const provided = useMemo(
+    () => ({ config: merge(DEFAULT_CORE_CONTEXT_CONFIG, defaultConfig) }),
+    [],
+  );
   return <Provider value={provided}>{children}</Provider>;
+};
+
+CoreProvider.defaultProps = {
+  defaultConfig: DEFAULT_CORE_CONTEXT_CONFIG,
 };
 
 export default CoreProvider;

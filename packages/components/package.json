@@ -30,13 +30,9 @@
   },
   "peerDependencies": {
     "@types/react": "*",
+    "lodash-es": "*",
     "react": "*",
     "react-dom": "*"
-  },
-  "devDependencies": {
-    "@types/react": "16.9.46",
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
   },
   "dependencies": {
     "@types/react-custom-scrollbars": "^4.0.7",

@@ -7,6 +7,7 @@
   "scripts": {
     "boot": "lerna bootstrap",
     "build": "yarn workspaces run build",
+    "build-storybook": "build-storybook",
     "clean": "lerna clean -y",
     "commit": "git-cz",
     "lint": "yarn lint:script && yarn lint:style",
@@ -16,6 +17,7 @@
     "lint:style": "yarn lint:less && yarn lint:css-in-js",
     "prettier": "prettier --write '**/*.{js,ts,jsx,tsx,less,md,json}'",
     "publish": "lerna publish from-git",
+    "storybook": "start-storybook -p 6006",
     "version": "lerna version --conventional-commits --yes"
   },
   "husky": {
@@ -38,18 +40,32 @@
       "path": "./node_modules/cz-lerna-changelog"
     }
   },
+  "dependencies": {
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
   "devDependencies": {
+    "@babel/core": "7.11.6",
     "@commitlint/cli": "9.1.2",
     "@commitlint/config-conventional": "9.1.2",
     "@mxcins/bedrock": "1.4.2",
     "@mxcins/library": "0.4.5",
+    "@storybook/addon-actions": "6.0.21",
+    "@storybook/addon-essentials": "6.0.21",
+    "@storybook/addon-links": "6.0.21",
+    "@storybook/react": "6.0.21",
+    "@types/lodash-es": "4.17.3",
     "@types/jest": "26.0.10",
+    "@types/react": "16.9.46",
+    "babel-loader": "8.1.0",
     "commitizen": "4.1.2",
     "cz-lerna-changelog": "2.0.3",
     "enzyme": "3.11.0",
     "husky": "4.2.5",
     "lerna": "3.22.1",
     "lint-staged": "10.2.11",
+    "lodash-es": "4.17.15",
+    "react-is": "16.13.1",
     "typescript": "3.9.7"
   }
 }

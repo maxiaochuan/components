@@ -1,11 +1,11 @@
-import React, { SFC, useCallback } from 'react';
-import {
-  ScrollbarProps as ScrollbarsProps,
-  Scrollbars as Component,
-} from 'react-custom-scrollbars';
+import React, { forwardRef, useCallback, useMemo } from 'react';
+import { ScrollbarProps as ComponentProps, Scrollbars as Component } from 'react-custom-scrollbars';
 import { forceCheck } from 'react-lazyload';
+import { useCoreConfig } from '../core-provider/context';
 
-export type { ScrollbarProps as ScrollbarsProps } from 'react-custom-scrollbars';
+export interface ScrollbarsProps extends Omit<ComponentProps, 'ref'> {
+  forceCheckLazyload?: boolean;
+}
 
 /**
  * @description
@@ -14,17 +14,29 @@ export type { ScrollbarProps as ScrollbarsProps } from 'react-custom-scrollbars'
  * @param {ScrollbarsProps} props
  * @returns {*}
  */
-const Scrollbars: SFC<ScrollbarsProps> = props => {
-  const { onScrollStop, ...rest } = props;
+const Scrollbars = forwardRef<Component, ScrollbarsProps>((props, ref) => {
+  const {
+    scrollbars: { forceCheckLazyload: coreForceCheckLazyload },
+  } = useCoreConfig();
+  const { onScrollStop, forceCheckLazyload, ...rest } = props;
+
+  const check = useMemo(
+    () => (typeof forceCheckLazyload === 'undefined' ? coreForceCheckLazyload : forceCheckLazyload),
+    [forceCheckLazyload, coreForceCheckLazyload],
+  );
 
   const onStop = useCallback(() => {
     if (onScrollStop) {
       onScrollStop();
     }
-    forceCheck();
-  }, [onScrollStop]);
+    if (check) {
+      forceCheck();
+    }
+  }, [onScrollStop, check]);
 
-  return <Component onScrollStop={onStop} {...rest} />;
-};
+  return <Component ref={ref} onScrollStop={onStop} {...rest} />;
+});
+
+Scrollbars.defaultProps = {};
 
 export default Scrollbars;
