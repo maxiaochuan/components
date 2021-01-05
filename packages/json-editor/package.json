@@ -1,0 +1,47 @@
+{
+  "name": "@mxcins/json-editor",
+  "version": "0.0.0",
+  "description": "toy",
+  "keywords": [
+    "react",
+    "components"
+  ],
+  "homepage": "https://github.com/maxiaochuan/components",
+  "bugs": {
+    "url": "https://github.com/maxiaochuan/components/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxiaochuan/components.git"
+  },
+  "license": "MIT",
+  "author": "Xiaochuan Ma <mxcins@gmail.com>",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "mlib build",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@ant-design/icons": "~4.0.0",
+    "@mxcins/utils": "^",
+    "@types/react": "*",
+    "antd": "~4.0.0",
+    "dayjs": "*",
+    "lodash-es": "*",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "dependencies": {
+    "@rjsf/core": "^2.4.0"
+  },
+  "devDependencies": {
+    "dayjs": "1.9.4"
+  }
+}

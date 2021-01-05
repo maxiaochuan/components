@@ -1,0 +1,86 @@
+import React, { SFC } from 'react';
+import type { FieldProps } from '@rjsf/core';
+import { Form } from 'antd';
+
+import WrapIfAdditional from './WrapIfAdditional';
+
+const VERTICAL_LABEL_COL = { span: 24 };
+const VERTICAL_WRAPPER_COL = { span: 24 };
+
+const FieldTemplate: SFC<FieldProps> = props => {
+  const {
+    children,
+    classNames,
+    description,
+    disabled,
+    displayLabel,
+    // errors,
+    // fields,
+    formContext,
+    help,
+    hidden,
+    id,
+    label,
+    onDropPropertyClick,
+    onKeyChange,
+    rawDescription,
+    rawErrors,
+    rawHelp,
+    readonly,
+    required,
+    schema,
+    // uiSchema,
+  } = props;
+  const {
+    colon,
+    labelCol = VERTICAL_LABEL_COL,
+    wrapperCol = VERTICAL_WRAPPER_COL,
+    wrapperStyle,
+  } = formContext;
+
+  if (hidden) {
+    return <div className="field-hidden">{children}</div>;
+  }
+
+  console.log('field template render', props);
+
+  const renderFieldErrors = () =>
+    [...new Set(rawErrors)].map(error => <div key={`field-${id}-error-${error}`}>{error}</div>);
+
+  return (
+    <WrapIfAdditional
+      classNames={classNames}
+      disabled={disabled}
+      formContext={formContext}
+      id={id}
+      label={label}
+      onDropPropertyClick={onDropPropertyClick}
+      onKeyChange={onKeyChange}
+      readonly={readonly}
+      required={required}
+      schema={schema}
+    >
+      {id === 'root' ? (
+        children
+      ) : (
+        <Form.Item
+          colon={colon}
+          // extra={!!rawDescription && description}
+          hasFeedback={schema.type !== 'array' && schema.type !== 'object'}
+          help={(!!rawHelp && help) || (!!rawErrors && renderFieldErrors())}
+          htmlFor={id}
+          label={displayLabel && label}
+          labelCol={labelCol}
+          required={required}
+          style={wrapperStyle}
+          validateStatus={rawErrors ? 'error' : undefined}
+          wrapperCol={wrapperCol}
+        >
+          {children}
+        </Form.Item>
+      )}
+    </WrapIfAdditional>
+  );
+};
+
+export default FieldTemplate;
