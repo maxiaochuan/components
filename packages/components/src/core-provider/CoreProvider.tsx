@@ -1,11 +1,9 @@
 import React, { SFC, useMemo } from 'react';
 import { merge } from 'lodash-es';
+import type { CoreProviderProps } from './interface';
 import { Provider } from './context';
-import { DEFAULT_CORE_CONTEXT_CONFIG, CoreContextConfig } from './const';
-
-export interface CoreProviderProps {
-  defaultConfig?: Partial<CoreContextConfig>;
-}
+import { DEFAULT_CORE_CONTEXT_CONFIG } from './const';
+import { RouterHelper } from './utils';
 
 /**
  * @description
@@ -15,9 +13,12 @@ export interface CoreProviderProps {
  * @returns {*}
  */
 const CoreProvider: SFC<CoreProviderProps> = props => {
-  const { defaultConfig = {}, children } = props;
+  const { defaultConfig = {}, route, children } = props;
   const provided = useMemo(
-    () => ({ config: merge(DEFAULT_CORE_CONTEXT_CONFIG, defaultConfig) }),
+    () => ({
+      config: merge(DEFAULT_CORE_CONTEXT_CONFIG, defaultConfig),
+      router: new RouterHelper(route),
+    }),
     [],
   );
   return <Provider value={provided}>{children}</Provider>;

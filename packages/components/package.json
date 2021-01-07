@@ -29,15 +29,25 @@
     "access": "public"
   },
   "peerDependencies": {
+    "@mxcins/types": "*",
+    "@mxcins/utils": "*",
     "@types/react": "*",
+    "react-router": "*",
+    "react-router-dom": "*",
     "lodash-es": "*",
     "react": "*",
     "react-dom": "*"
   },
+  "devDependencies": {
+    "@types/query-string": "6.3.0",
+    "@types/path-to-regexp": "1.7.0"
+  },
   "dependencies": {
-    "@types/react-custom-scrollbars": "^4.0.7",
-    "@types/react-lazyload": "^2.6.0",
-    "react-custom-scrollbars": "^4.2.1",
-    "react-lazyload": "^3.0.0"
+    "@types/react-custom-scrollbars": "4.0.7",
+    "@types/react-lazyload": "2.6.0",
+    "react-custom-scrollbars": "4.2.1",
+    "react-lazyload": "3.0.0",
+    "path-to-regexp": "6.2.0",
+    "query-string": "6.13.8"
   }
 }

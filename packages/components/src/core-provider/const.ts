@@ -1,22 +1,15 @@
-export interface CoreContextScrollbarsConfig {
-  forceCheckLazyload: boolean;
-}
+import type { CoreContextType } from './interface';
+import { RouterHelper } from './utils';
 
 export const DEFAULT_CORE_CONTEXT_SCROLLBARS_CONFIG = {
   forceCheckLazyload: false,
 };
 
-export interface CoreContextConfig {
-  scrollbars: CoreContextScrollbarsConfig;
-}
-export const DEFAULT_CORE_CONTEXT_CONFIG: CoreContextConfig = {
+export const DEFAULT_CORE_CONTEXT_CONFIG = {
   scrollbars: DEFAULT_CORE_CONTEXT_SCROLLBARS_CONFIG,
 };
 
-export interface CoreContext {
-  config: CoreContextConfig;
-}
-
-export const DEFAULT_CORE_CONTEXT: CoreContext = {
+export const DEFAULT_CORE_CONTEXT: CoreContextType = {
   config: DEFAULT_CORE_CONTEXT_CONFIG,
+  router: new RouterHelper(),
 };

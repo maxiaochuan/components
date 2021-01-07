@@ -41,8 +41,14 @@
     }
   },
   "dependencies": {
+    "@mxcins/types": "1.7.3",
+    "@mxcins/utils": "1.13.7",
+    "@types/react-router": "5.1.9",
+    "@types/react-router-dom": "5.1.7",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.11.6",
@@ -54,8 +60,8 @@
     "@storybook/addon-essentials": "6.0.21",
     "@storybook/addon-links": "6.0.21",
     "@storybook/react": "6.0.21",
-    "@types/lodash-es": "4.17.3",
     "@types/jest": "26.0.10",
+    "@types/lodash-es": "4.17.3",
     "@types/react": "16.9.46",
     "babel-loader": "8.1.0",
     "commitizen": "4.1.2",
