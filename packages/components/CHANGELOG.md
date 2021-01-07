@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.1](https://github.com/maxiaochuan/components/compare/@mxcins/components@0.1.0-alpha.0...@mxcins/components@0.1.0-alpha.1) (2021-01-07)
+
+
+### Bug Fixes
+
+* package.json sort ([ad8efe9](https://github.com/maxiaochuan/components/commit/ad8efe9ab8cacbc4f6b7bb0be264e002aea7b771))
+
+
+### Features
+
+* **components:** core router & ex-link ex-redirect ([59f29a6](https://github.com/maxiaochuan/components/commit/59f29a6792a3e9fd7bafc0cc38bec81b83e1e86c))
+
+
+
+
+
 # [0.1.0-alpha.0](https://github.com/maxiaochuan/components/compare/@mxcins/components@0.0.1-alpha.1...@mxcins/components@0.1.0-alpha.0) (2020-10-20)
 
 
