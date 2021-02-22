@@ -23,8 +23,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "mlib build",
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "build": "mlib build"
   },
   "dependencies": {
     "@types/react-custom-scrollbars": "4.0.7",
