@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.2](https://github.com/maxiaochuan/components/compare/@mxcins/components@0.1.0-alpha.1...@mxcins/components@0.1.0-alpha.2) (2021-02-22)
+
+
+### Bug Fixes
+
+* **components:** fix: package.json files & types ([b8ef438](https://github.com/maxiaochuan/components/commit/b8ef438365d9957b5a5f37746149a1b527ba1f0b))
+
+
+
+
+
 # [0.1.0-alpha.1](https://github.com/maxiaochuan/components/compare/@mxcins/components@0.1.0-alpha.0...@mxcins/components@0.1.0-alpha.1) (2021-01-07)
 
 
