@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.3](https://github.com/maxiaochuan/components/compare/@mxcins/components@0.1.0-alpha.2...@mxcins/components@0.1.0-alpha.3) (2021-02-22)
+
+
+### Bug Fixes
+
+* **components:** fix: build library & babel runtime ([0797673](https://github.com/maxiaochuan/components/commit/07976731a23bdfca2b5c05252a9d0d4b02d0ac45))
+
+
+
+
+
 # [0.1.0-alpha.2](https://github.com/maxiaochuan/components/compare/@mxcins/components@0.1.0-alpha.1...@mxcins/components@0.1.0-alpha.2) (2021-02-22)
 
 
